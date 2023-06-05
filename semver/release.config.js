@@ -4,7 +4,7 @@ const config = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     ['@semantic-release/npm', {
-        'npmPlublish': false
+        'npmPublish': false
     }],
     ['@semantic-release/git', {
       'assets': ['package.json'],
