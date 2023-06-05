@@ -1,6 +1,6 @@
 {
   "name": "semver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An npm project bootstrapped in the root directory of a git repository designed to implement a consistent way to provide semantic versioning to any project. ",
   "main": "release.config.js",
   "scripts": {
