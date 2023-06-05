@@ -1,0 +1,17 @@
+{
+  "name": "semver",
+  "version": "0.0.1",
+  "description": "An npm project bootstrapped in the root directory of a git repository designed to implement a consistent way to provide semantic versioning to any project. ",
+  "main": "release.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andy Godish",
+  "license": "ISC",
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.2",
+    "semantic-release": "^21.0.3"
+  }
+}

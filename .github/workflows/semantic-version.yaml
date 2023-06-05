@@ -1,0 +1,29 @@
+name: Semantic Version
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  release: 
+    permissions:
+      contents: write	# allows pushes to github
+      issues: write   
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - run: |
+        cd ./semver
+        npm install
+        npx semantic-release
+      id: semver
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
