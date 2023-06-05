@@ -48,7 +48,7 @@ fi
 
 mkdir -p semver && cd semver
 
-mv /work/release.config.js /work/semver/release.config.js
+cp /work/release.config.js /work/semver/release.config.js
 
 npm init -y \
   --init-author-name="Andy Godish" \
