@@ -48,13 +48,13 @@ fi
 
 mkdir -p semver && cd semver
 
-cp /work/release.config.js /work/semver/release.config.js
+cp /app/release.config.js /work/semver/release.config.js
 
 npm init -y \
   --init-author-name="Andy Godish" \
   --init-version="0.0.1"
 
-jq --arg desc "$(cat /work/description.txt)" \
+jq --arg desc "$(cat /app/description.txt)" \
   '.description=$desc' package.json > tmp.json && \
    mv tmp.json package.json
 
@@ -69,5 +69,5 @@ else
     chown -R 1000:1000 .
 fi
 
-cd /work && /bin/bash ./git.sh
+cd /work && /bin/bash /app/git.sh
 

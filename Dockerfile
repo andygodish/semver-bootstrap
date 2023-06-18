@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /work
+WORKDIR /app
 
 # Install dependencies
 RUN apk update && \
@@ -15,12 +15,14 @@ RUN git config --global init.defaultBranch main && \
     git config --global user.email "semver-bootstrap-app" && \
     git config --global user.name "semver-bootstrap-app"
 
-COPY ./init.sh              /work
-COPY ./git.sh               /work
-COPY ./release.config.js    /work
-COPY ./description.txt      /work
-COPY ./.gitignore           /work
+COPY ./init.sh              .
+COPY ./git.sh               .
+COPY ./release.config.js    .
+COPY ./description.txt      .
+COPY ./.gitignore           .
 
 RUN chmod +x ./init.sh 
 
-CMD [ "/bin/bash", "./init.sh" ]
+WORKDIR /work
+
+CMD [ "/bin/bash", "/app/init.sh" ]
